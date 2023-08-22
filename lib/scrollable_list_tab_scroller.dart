@@ -27,6 +27,7 @@ class ScrollableListTabScroller extends StatefulWidget {
   final void Function(int)? tabChanged;
   final double earlyChangePositionOffset;
   final Duration animationDuration;
+  
 
   ScrollableListTabScroller({
     required this.itemCount,
@@ -51,6 +52,7 @@ class ScrollableListTabScroller extends StatefulWidget {
     this.addSemanticIndexes = true,
     this.addAutomaticKeepAlives = true,
     this.addRepaintBoundaries = true,
+    this.preventLastTabBounce=false,
     this.minCacheExtent,
   });
 
@@ -114,6 +116,10 @@ class ScrollableListTabScroller extends StatefulWidget {
   ///
   /// See [SliverChildBuilderDelegate.addRepaintBoundaries].
   final bool addRepaintBoundaries;
+
+  /// Prevent bounce when last category has few items [bool].
+  ///
+  final bool preventLastTabBounce;
 
   /// The minimum cache extent used by the underlying scroll lists.
   /// See [ScrollView.cacheExtent].
